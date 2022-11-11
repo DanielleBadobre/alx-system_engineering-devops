@@ -1,1 +1,1 @@
-# this a a repo for the shell basics alx project
+This directory contains tasks about the expansion concept in the shell, i will hopefully edit this later
