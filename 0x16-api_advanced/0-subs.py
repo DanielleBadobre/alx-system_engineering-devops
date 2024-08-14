@@ -6,14 +6,11 @@ import requests
 
 def number_of_subscribers(subreddit):
     """ show number of subs for subreddit"""
-    if type(subreddit) is not str or subreddit is None:
-        return 0
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+
     try:
-        headers = {'User-Agent': 'DanielleBadobre'}
-        request = requests.get('https://api.reddit.com/r/{}/about'.
-                               format(subreddit), headers=headers)
-        subscribers = request.json()
-        sub = subscribers['data']['subscribers']
-        return sub
+        return response.json().get('data').get('subscribers')
     except Exception:
         return 0
