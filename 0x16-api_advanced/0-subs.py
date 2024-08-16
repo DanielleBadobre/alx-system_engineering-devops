@@ -18,4 +18,4 @@ def number_of_subscribers(subreddit):
         sub = subscribers['data']['subscribers']
         return sub
     except:
-        return 0
+        return

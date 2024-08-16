@@ -17,5 +17,7 @@ def top_ten(subreddit):
                 print(post['data']['title'])
         else:
             print(None)
+            return
     except requests.RequestException:
         print(None)
+        return
